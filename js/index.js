@@ -15,7 +15,7 @@ const addSearchBlock = () => {
 		div.id = 'search-block';
 		div.className = '.widget-search-main';
 		div.setAttribute("style", "right:15px;position:fixed;top:5px;z-index:9999;");
-		div.innerHTML = `<div style="text-align:right;display:grid;grid-template-columns:1fr 1fr;">
+		div.innerHTML = `<div style="text-align:right;display:grid;grid-template-columns:2fr 1fr;">
 				<div id="number-coincidences" style="text-align:left;color:#fff;"></div>
 				<div>
 					<span id="show-search" style="text-align:right;color: #fff;cursor:pointer;border-bottom: 1px solid #fff;display:inline-block"  onclick="showSearch()">
