@@ -18,7 +18,7 @@ const addSearchBlock = () => {
 		div.innerHTML = `<div style="text-align:right;display:grid;grid-template-columns:2fr 1fr;">
 				<div id="number-coincidences" style="text-align:left;color:#fff;"></div>
 				<div>
-					<span id="show-search" style="text-align:right;color: #fff;cursor:pointer;border-bottom: 1px solid #fff;display:inline-block"  onclick="showSearch()">
+					<span id="show-search" style="text-align:right;color: #fff;cursor:pointer;line-height:18px;display:inline-block"  onclick="showSearch()">
 						Поиск по странице
 					</span>
 					<span id="close-search" style="text-align:right;color: #fff;cursor:pointer;border-bottom: 1px solid #fff;display:none" onclick="closeSearch()">
