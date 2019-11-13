@@ -138,7 +138,7 @@ const searchMatches = () => {
 		errorBlock.textContent = 'Введите текст для поиска';
 		closeSearchElem.style.display = "inline-block";
 		showSearchElem.style.display = "none";
-		widgetSearchVn.style.display="block";
+		widgetSearchVn.style.display="grid";
 	}
 };
 
