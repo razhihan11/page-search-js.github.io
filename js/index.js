@@ -26,7 +26,7 @@ const addSearchBlock = () => {
 					</span>
 				</div>
 			</div>
-			<div id="widget-search-vn" style="display:none;display: grid;grid-template-columns:3fr 1fr;align-items:center;grid-gap:8px;padding-top:10px;">
+			<div id="widget-search-vn" style="display:none;grid-template-columns:3fr 1fr;align-items:center;grid-gap:8px;padding-top:10px;">
 				<input type="search" id="searchInput" style="height:35px;width:100%;font-size:16px;padding: 0 5px">
 				<button id="searchButton" onclick="searchMatches()" style="height:34px;width:100%;margin:0;padding:0;font-size:17px;cursor:pointer">Найти</button>
 			</div>
