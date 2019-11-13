@@ -6,7 +6,6 @@ var originalHTML,
 	errorBlock,
 	numberCoincidences = 0,
 	numberCoincidencesBlock,
-	timeOut,
 	coincidencesElem;
 
 const addSearchBlock = () => {
@@ -81,7 +80,7 @@ const closeSearch = () => {
 
 const scrollSearchElem = () => {
 	coincidencesElem = document.getElementsByClassName('coincidences-elem');
-	if (coincidencesElem) {
+	if (coincidencesElem[0] != undefined) {
 		coincidencesElem[0].scrollIntoView({block: "center", behavior: "smooth"});
 	}
 }
@@ -104,20 +103,17 @@ const searchMatches = () => {
 	};
 	if (searchText) {
 		let rex = />(.*?)</g;
-	    let editBodyTags = originalHTML;
-	    let pageText = editBodyTags.match(rex);
+    let editBodyTags = originalHTML;
+    let pageText = editBodyTags.match(rex);
 		let arrayResultText = [];
 		let rexTextSearch = '/'+searchText+'/gi';
-		let result = '';
 		let pageTextMatch = [];
-		let counter = 0;
 
 		for(let i = 0; i < pageText.length; i++) {
 			arrayResultText[i] = pageText[i].replace(eval(rexTextSearch), `<span class="coincidences-elem" style="background-color:yellow;color:#000;">$&</span>`);
 			pageTextMatch = pageText[i].match(eval(rexTextSearch));
 			numberCoincidences += pageTextMatch != null ? pageTextMatch.length : 0;			
 		}
-		console.log(numberCoincidences);
 
 		for(let i = 0; i < pageText.length; i++) {
 			editBodyTags=editBodyTags.replace(pageText[i],arrayResultText[i]);
@@ -127,7 +123,6 @@ const searchMatches = () => {
 		init();
 		scrollSearchElem();
 
-		counter = 0;
 		numberCoincidencesBlock.textContent = `Кол-во совпадений - ${numberCoincidences}`;
 		numberCoincidences = 0;
 		searchInputElem.value = searchText;
