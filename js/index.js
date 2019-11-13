@@ -15,7 +15,7 @@ const addSearchBlock = () => {
 		div.id = 'search-block';
 		div.className = '.widget-search-main';
 		div.setAttribute("style", "right:15px;position:fixed;top:5px;z-index:9999;");
-		div.innerHTML = `<div style="text-align:right;display:grid;grid-template-columns:2fr 1fr;">
+		div.innerHTML = `<div style="text-align:right;display:grid;grid-template-columns:1fr 1fr;">
 				<div id="number-coincidences" style="text-align:left;color:#fff;"></div>
 				<div>
 					<span id="show-search" style="text-align:right;color: #fff;cursor:pointer;border-bottom: 1px solid #fff;display:inline-block"  onclick="showSearch()">
@@ -26,9 +26,9 @@ const addSearchBlock = () => {
 					</span>
 				</div>
 			</div>
-			<div id="widget-search-vn" style="display:none">
-				<input type="search" id="searchInput" style="height:35px;width:230px;margin:15px 10px 0 0;font-size:16px;padding: 0 5px">
-				<button id="searchButton" onclick="searchMatches()" style="height:34px;width:66px;margin:0;padding:0;font-size:17px;cursor:pointer">Найти</button>
+			<div id="widget-search-vn" style="display:none;display: grid;grid-template-columns:3fr 1fr;align-items:center;grid-gap:8px;padding-top:10px;">
+				<input type="search" id="searchInput" style="height:35px;width:100%;font-size:16px;padding: 0 5px">
+				<button id="searchButton" onclick="searchMatches()" style="height:34px;width:100%;margin:0;padding:0;font-size:17px;cursor:pointer">Найти</button>
 			</div>
 			<div id="error" style="color:red; font-size:16px;"></div>`;
 
@@ -68,7 +68,7 @@ const elemDisplayStyle = (element) => {
 
 const showSearch = () => {
 	closeSearchElem = document.getElementById('close-search');
-	widgetSearchVn.style.display="block";
+	widgetSearchVn.style.display="grid";
 	showSearchElem.style.display = "none";
 	closeSearchElem.style.display = "inline-block";
 };
@@ -131,7 +131,7 @@ const searchMatches = () => {
 		numberCoincidencesBlock.textContent = `Кол-во совпадений - ${numberCoincidences}`;
 		numberCoincidences = 0;
 		searchInputElem.value = searchText;
-	  	widgetSearchVn.style.display="block";
+	  	widgetSearchVn.style.display="grid";
 	  	showSearchElem.style.display = "none";
 		closeSearchElem.style.display = "inline-block";
 	} else {
