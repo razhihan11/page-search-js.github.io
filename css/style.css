@@ -23,7 +23,7 @@ body {
 }
 #branding {
     position: relative;
-    z-index: 9999;
+    z-index: 999;
     padding-bottom: 40px;
 }
 #branding #site-title {
@@ -159,4 +159,15 @@ a {
     padding: 1.2em 0.5em;
     text-align: center;
     background-color: #131313;
+}
+@media (min-width: 320) and (max-width: 500px) {
+    .social {
+        display: none;
+    }
+    #site-title {
+        padding: 53px 0 20px;
+    }
+    #branding {
+        text-align: center;
+    }
 }
